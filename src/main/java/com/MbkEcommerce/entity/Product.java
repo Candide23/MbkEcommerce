@@ -6,6 +6,7 @@ import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+//import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -16,6 +17,7 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
     @ManyToOne
@@ -50,5 +52,4 @@ public class Product {
     @Column(name = "last_updated")
     @UpdateTimestamp
     private Date lastUpdated;
-
 }

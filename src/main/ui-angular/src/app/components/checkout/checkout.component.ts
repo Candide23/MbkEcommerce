@@ -60,7 +60,7 @@ export class CheckoutComponent implements OnInit {
     const startMonth: number = new Date().getMonth() + 1;
     console.log("startMonth: " + startMonth);
 
-    this.mbkShopFormService.getCreditCardMonth(startMonth).subscribe(
+    this.mbkShopFormService.getCreditCardMonths(startMonth).subscribe(
       data => {
         console.log("Retrieved credit card Months : " + JSON.stringify(data));
         this.creditCardMonths = data;
@@ -94,6 +94,32 @@ export class CheckoutComponent implements OnInit {
   onSubmit() {
     console.log("Handling the submit button");
     console.log(this.checkoutFormGroup.get('customer').value);
+  }
+
+  handleMonthsAndYears(){
+
+    const crediCardFormGroup = this.checkoutFormGroup.get('creditCard');
+
+    const currentYear: number = new Date().getFullYear();
+    const selectedYear: number = Number(crediCardFormGroup.value.expirationYear);
+
+    // if the current year equals the selected year, then start with the current month
+
+    let startMonth: number;
+
+    if(currentYear === selectedYear) {
+      startMonth = new Date().getMonth() + 1;
+    }
+    else {
+      startMonth = 1;
+    }
+
+    this.mbkShopFormService.getCreditCardMonths(startMonth).subscribe(
+    data => {
+      console.log("Retrivied credit card months: " + JSON.stringify(data));
+      this.creditCardMonths = data;
+
+      })
   }
 
   

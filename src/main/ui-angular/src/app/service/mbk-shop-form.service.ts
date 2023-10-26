@@ -8,7 +8,7 @@ export class MbkShopFormService {
 
   constructor() { }
 
-  getCreditCardMonth(startMonth: number):Observable<number[]>{
+  getCreditCardMonths(startMonth: number):Observable<number[]>{
 
     let data: number[] = [];
 

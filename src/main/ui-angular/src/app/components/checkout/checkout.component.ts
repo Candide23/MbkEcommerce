@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Country } from 'src/app/common/country';
 import { MbkShopFormService } from 'src/app/service/mbk-shop-form.service';
 
 @Component({
@@ -18,6 +19,7 @@ export class CheckoutComponent implements OnInit {
   creditCardMonths: number[] = [];
 
 
+  countries: Country[] = [];
 
   constructor(private formBuilder: FormBuilder,
               private mbkShopFormService: MbkShopFormService ) {}
@@ -76,7 +78,15 @@ export class CheckoutComponent implements OnInit {
       }
     )
 
+      // populate countries
 
+      this.mbkShopFormService.getCountries().subscribe(
+        data => {
+          console.log("Retrieved countirs: " + JSON.stringify(data));
+          this.countries = data;
+
+        }
+      )
      
   }
 

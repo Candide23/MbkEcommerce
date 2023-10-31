@@ -25,7 +25,7 @@ export class MbkShopFormService {
   getStates(theCountryCode: string): Observable<State[]> {
 
     //search url
-    const searchStatesUrl = `${this.statesUrl}/search/findByCountryCode?codes=${theCountryCode}`;
+    const searchStatesUrl = `${this.statesUrl}/search/findByCountryCode?code=${theCountryCode}`;
     return this.httpClient.get<GetResponseStates>(searchStatesUrl).pipe(
       map(response => response._embedded.states)
     );

@@ -89,6 +89,14 @@
                                         {{ country.name }}
                                     </option>
                                 </select>
+
+                                <div *ngIf="shippingAddressCountry.invalid && (shippingAddressCountry.dirty || shippingAddressCountry.touched)" class="alert alert-danger mt-1">
+
+                                    <div *ngIf="shippingAddressCountry.errors?.['required'] || shippingAddressCountry.errors?.['notOnlyWhitespace']">
+                                        Country is required
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -166,6 +174,14 @@
                         <div class="col-md-9">
                             <div class="input-space">
                                 <input formControlName="street" type="text">
+
+                                <div *ngIf="shippingAddressStreet.invalid && (shippingAddressStreet.dirty || shippingAddressStreet.touched)" class="alert alert-danger mt-1">
+
+                                    <div *ngIf="shippingAddressStreet.errors?.['required'] || shippingAddressStreet.errors?.['notOnlyWhitespace']">
+                                        Street is required
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

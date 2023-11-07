@@ -3,10 +3,11 @@
 
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
-import { MbkShopFormService } from 'src/app/service/mbk-shop-form.service';
+import { MbkShopFormService } from 'src/app/services/mbk-shop-form.service';
 import { Country } from 'src/app/common/country';
 import { State } from 'src/app/common/state';
 import { MbkShopValidators } from 'src/app/validators/mbk-shop-validators';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-checkout',
@@ -30,9 +31,12 @@ export class CheckoutComponent implements OnInit {
   
   
   constructor(private formBuilder: FormBuilder,
-              private mbkShopFormService: MbkShopFormService) { }
+              private mbkShopFormService: MbkShopFormService,
+              private cartService: CartService) { }
 
   ngOnInit(): void {
+
+    this.reviewCartDetails();
     
     this.checkoutFormGroup = this.formBuilder.group({
       customer: this.formBuilder.group({
@@ -108,6 +112,21 @@ export class CheckoutComponent implements OnInit {
         this.countries = data;
       }
     );
+  }
+  reviewCartDetails() {
+    
+    // subscribe to cartService.totalQuantity
+    this.cartService.totalQuantity.subscribe(
+      totalQuantity => this.totalQuantity = totalQuantity
+    );
+
+
+    // subscribe to cartService.totalPrice
+
+    this.cartService.totalPrice.subscribe(
+      totalPrice => this.totalPrice = totalPrice
+    )
+    
   }
 
   get firstName() { return this.checkoutFormGroup.get('customer.firstName'); }

@@ -18,6 +18,8 @@ import java.util.Set;
 @Setter
 public class Order {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
     private Long id;
 
@@ -51,6 +53,10 @@ public class Order {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "shipping_address_id", referencedColumnName = "id")
     private Address shippingAddress;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "billing_address_id", referencedColumnName = "id")
+    private Address billingAddress;
 
     public void add(OrderItem item) {
 

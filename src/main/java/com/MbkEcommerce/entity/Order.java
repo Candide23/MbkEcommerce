@@ -26,7 +26,7 @@ public class Order {
     @Column(name="order_tracking_number")
     private String orderTrackingNumber;
 
-    @Column(name="id")
+    @Column(name="total_quantity")
     private int totalQuantity;
 
     @Column(name="total_price")

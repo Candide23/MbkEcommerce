@@ -1,0 +1,1 @@
+declare module '@okat/okta-signin-widget';

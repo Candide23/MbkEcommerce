@@ -7,7 +7,6 @@ import com.MbkEcommerce.entity.Customer;
 import com.MbkEcommerce.entity.Order;
 import com.MbkEcommerce.entity.OrderItem;
 import jakarta.transaction.Transactional;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -43,6 +42,17 @@ public class CheckoutServiceImpl implements CheckoutService{
 
         // populate customer with order
         Customer customer = purchase.getCustomer();
+
+        // check if this is an existing customer
+        String theEmail = customer.getEmail();
+
+        Customer customerFromDb = customerRepository.findByEmail(theEmail);
+
+        if(customerFromDb != null) {
+            // we found them .. let's assign them accordingly
+            customer = customerFromDb;
+
+        }
         customer.add(order);
 
         // save to the database

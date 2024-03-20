@@ -17,3 +17,26 @@ The wireframes provide a visual representation of the application's layout and f
 #### Product Details Page: Displays detailed information about a selected product, including description and pricing.
 #### Shopping Cart Details Page: Shows a list of items in the shopping cart with options to modify quantities and perform checkout.
 #### Checkout Page: Collects customer information and allows order review before finalizing the purchase.
+
+
+# How to  run the application, follow these steps:
+
+## Prerequisites
+#### Ensure you have Node.js installed on your system.
+#### Install Angular CLI globally by running npm install -g @angular/cli.
+#### Make sure you have Java Development Kit (JDK) installed for running Spring Boot applications.
+#### Set up a database server compatible with Spring Boot (e.g., MySQL, PostgreSQL).
+
+## Frontend Setup
+#### Navigate to the frontend directory of the project.
+#### Install dependencies by running npm install.
+#### Start the Angular development server by running ng serve.
+
+## Backend Setup
+#### Navigate to the backend directory of the project.
+#### Configure the database connection in the application.properties file.
+#### Build the Spring Boot application by running ./mvnw clean package (if using Maven) or ./gradlew build (if using Gradle).
+#### Run the application by executing the generated JAR file or using ./mvnw spring-boot:run (if using Maven) or ./gradlew bootRun (if using Gradle).
+
+## Accessing the Application
+#### Once both the frontend and backend servers are running, you can access the application by navigating to http://localhost:4200 in your web browser

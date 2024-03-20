@@ -23,14 +23,14 @@ The wireframes provide a visual representation of the application's layout and f
 
 ## Prerequisites
 #### Ensure you have Node.js installed on your system.
-#### Install Angular CLI globally by running npm install -g @angular/cli.
+#### Install Angular CLI globally by running ```npm install -g @angular/cli.```
 #### Make sure you have Java Development Kit (JDK) installed for running Spring Boot applications.
 #### Set up a database server compatible with Spring Boot (e.g., MySQL, PostgreSQL).
 
 ## Frontend Setup
-#### Navigate to the frontend directory of the project: cd src/main/ui-angular
-#### Install dependencies by running npm install.
-#### Start the Angular development server by running ng serve.
+#### Navigate to the frontend directory of the project: ```cd src/main/ui-angular```
+#### Install dependencies by running ```npm install.```
+#### Start the Angular development server by running ```ng serve.```
 
 ## Backend Setup
 #### Navigate to the backend directory of the project.

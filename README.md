@@ -5,10 +5,10 @@ This project involves building a real-time e-commerce application, which will fu
 Outlined below are the project requirements as specified by the management:
 
 ## Display a list of products.
-Implement functionality to add products to the shopping cart with CRUD support.
-Enable shopping cart checkout.
-Implement user login/logout security.
-Provide the capability to track previous orders for logged-in users.
+# Implement functionality to add products to the shopping cart with CRUD support.
+# Enable shopping cart checkout.
+# Implement user login/logout security.
+# Provide the capability to track previous orders for logged-in users.
 
 ## Wireframes
 The wireframes provide a visual representation of the application's layout and functionality:

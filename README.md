@@ -1,5 +1,7 @@
 # Project Overview
 This project involves building a real-time e-commerce application, which will function as a Full Stack application. The front-end will be developed using Angular, while the back-end will be powered by Spring Boot. Communication between the front and back-end will be facilitated through a REST API. Additionally, the back-end will incorporate a database setup with full CRUD (Create, Read, Update, Delete) support for the specified database.
+<img width="1488" alt="Screenshot 2024-07-10 at 10 29 46 AM" src="https://github.com/Candide23/MbkEcommerce/assets/89795037/291c63db-2f30-4993-8b41-565ccee3edb7">
+
 
 ## Project Requirements
 Outlined below are the project requirements as specified by the management:
